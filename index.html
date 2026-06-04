@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Study Helper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📚 AI Study Helper</h1>
+
+<textarea id="notes" placeholder="Paste your study notes here..."></textarea>
+
+<div class="buttons">
+
+<button onclick="summarize()">Summarize</button>
+<button onclick="generateQuiz()">Quiz Me</button>
+<button onclick="flashcards()">Flashcards</button>
+
+</div>
+
+<hr>
+
+<h2>🤖 Ask AI Tutor</h2>
+
+<input id="question" placeholder="Ask a question..." />
+
+<button onclick="answerQuestion()">Ask</button>
+
+<div id="output"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
