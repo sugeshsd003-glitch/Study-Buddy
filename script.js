@@ -58,12 +58,27 @@ document.getElementById("output").innerText = cards;
 }
 
 // --------------------
-// AI TUTOR (NO API)
+//     AI TUTOR 
 // --------------------
+
 function answerQuestion() {
 
 let question =
 document.getElementById("question").value.toLowerCase();
+
+// 🔥 ADD THIS FIRST (IMPORTANT)
+if (
+question.includes("date") ||
+question.includes("today") ||
+question.includes("day")
+) {
+let today = new Date().toDateString();
+
+document.getElementById("output").innerText =
+"📅 Today is: " + today;
+
+return;
+}
 
 let notes =
 getText().toLowerCase();
@@ -74,7 +89,6 @@ if (!notes) return alert("Paste notes first!");
 let sentences =
 notes.split(".").filter(s => s.length > 10);
 
-// find matching sentences
 let matches = sentences.filter(s =>
 question.split(" ").some(word => s.includes(word))
 );
@@ -89,4 +103,5 @@ answer =
 }
 
 document.getElementById("output").innerText = answer;
+
 }
